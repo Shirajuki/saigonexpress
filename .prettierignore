@@ -1,0 +1,4 @@
+# .prettierignore file
+.next
+dist
+node_modules/
