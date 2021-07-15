@@ -12,9 +12,11 @@ const Home = () => {
       </Head>
 
       <header className={styles.header}>
-        <img
-          src="https://saigonexpress.no/images/saigon.jpg"
+        <Image
+          src="/logo.jpg"
           alt="saigonexpress logo"
+          width={170}
+          height={60}
         />
       </header>
       <main className={styles.main}>
