@@ -7,6 +7,11 @@
   align-items: center;
   height: 100vh;
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+  }
   .main {
     padding: 5rem 0;
     flex: 1;
