@@ -27,10 +27,8 @@ const Home = () => {
           <a href="#kontaktoss">Kontakt oss</a>
         </nav>
         <div className={styles.icons}>
-          <a href="#" className="themeSwitcherIcon">
-            <ThemeSwitcherIcon />
-          </a>
-          <a href="#" className="facebookIcon">
+          <ThemeSwitcherIcon />
+          <a href="#" className={styles.facebookIcon}>
             <svg
               width="24"
               height="24"
@@ -53,8 +51,8 @@ const Home = () => {
             <div className={styles.titleWrapper}>
               <h1 className={styles.title}>Velkommen til Saigon Express</h1>
               <p>
-                Nå er det levering hos oss via <span>Wolt</span> og{" "}
-                <span>Just-eat!</span>
+                Nå er det levering hos oss via <a href="#">Wolt</a> og{" "}
+                <a href="#">JustEat!</a>
               </p>
             </div>
             <div className={styles.buttonWrapper}>
@@ -95,11 +93,11 @@ const Home = () => {
         <div id="meny" className={styles.menu}>
           <h1>Vår takeaway meny</h1>
           <p>
-            <a href="">Ring og bestill</a> nå eller i forveien!
+            <a href="#">Ring og bestill</a> nå eller i forveien!
           </p>
           <div className={styles.menuDisplay}></div>
           <div>
-            <p>... eller se menyen i eget vindu</p>
+            <p>eller se menyen i eget vindu...</p>
             <div>
               <button>Takeaway PDF meny</button>
               <button>Fullstendig PDF meny</button>
