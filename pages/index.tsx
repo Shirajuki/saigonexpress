@@ -2,109 +2,17 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import ThemeSwitcherIcon from "../components/ThemeSwitcherIcon";
+import FlipMenu from "../components/FlipMenu";
 import ImageGallery from "react-image-gallery";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import HTMLFlipBook from "react-pageflip";
-const Page = React.forwardRef((props: any, ref: any) => {
-  return (
-    <div className="demoPage" ref={ref}>
-      {props.children}
-    </div>
-  );
-});
-Page.displayName = "page";
-const MyBook = (props: any) => {
-  const flipMenuRef = useRef<any>(null);
-  const nextButtonClick = () => flipMenuRef?.current?.pageFlip()?.flipNext();
-  const prevButtonClick = () => flipMenuRef?.current?.pageFlip()?.flipPrev();
-  const onInit = useCallback((e) => {
-    if (flipMenuRef.current) nextButtonClick();
-  }, []);
-  return (
-    <>
-      <button className={styles.menuNextButton} onClick={nextButtonClick}>
-        <svg
-          width="22"
-          height="48"
-          viewBox="0 0 22 48"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M3 2L18 24.6286L3 46" stroke="#5D7131" strokeWidth="5" />
-        </svg>
-      </button>
-      <button className={styles.menuPrevButton} onClick={prevButtonClick}>
-        <svg
-          width="22"
-          height="48"
-          viewBox="0 0 22 48"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M19 46L4 23.3714L19 2" stroke="#5D7131" strokeWidth="5" />
-        </svg>
-      </button>
-      <HTMLFlipBook
-        width={300}
-        height={500}
-        usePortrait={true}
-        showCover={true}
-        mobileScrollSupport={true}
-        onInit={onInit}
-        ref={(component: any) => (flipMenuRef.current = component)}
-      >
-        <Page number="1">
-          <Image
-            src="https://saigonexpress.no/pages/1.jpg"
-            width={580}
-            height={1000}
-            alt="Saigon Express menu page 1"
-          />
-        </Page>
-        <Page number="2">
-          <Image
-            src="https://saigonexpress.no/pages/2.jpg"
-            width={580}
-            height={1000}
-            alt="Saigon Express menu page2"
-          />
-        </Page>
-        <Page number="3">
-          <Image
-            src="https://saigonexpress.no/pages/3.jpg"
-            width={580}
-            height={1000}
-            alt="Saigon Express menu page 3"
-          />
-        </Page>
-        <Page number="4">
-          <Image
-            src="https://saigonexpress.no/pages/5.jpg"
-            width={580}
-            height={1000}
-            alt="Saigon Express menu page 4"
-          />
-        </Page>
-        <Page number="5">
-          <Image
-            src="https://saigonexpress.no/pages/6.jpg"
-            width={580}
-            height={1000}
-            alt="Saigon Express menu page 5"
-          />
-        </Page>
-        <Page number="6">
-          <Image
-            src="https://saigonexpress.no/pages/4.jpg"
-            width={580}
-            height={1000}
-            alt="Saigon Express menu page 6"
-          />
-        </Page>
-      </HTMLFlipBook>
-    </>
-  );
-};
+import Slideshow from "../components/Slideshow";
+import React, { useEffect, useState } from "react";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+
+// Parallax section //
+// Splash image slideshow/carousell //
+// Navigation show on scroll //
+// Mobile view
+// Dark mode
 
 const images = [
   {
@@ -133,6 +41,16 @@ const images = [
   },
 ];
 const Home = () => {
+  const [hideOnScroll, setHideOnScroll] = useState(true);
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y < -90;
+      if (isShow) setHideOnScroll(false);
+      else setHideOnScroll(true);
+    },
+    [hideOnScroll]
+  );
   useEffect(() => {
     const googleTranslateElementInit = () => {
       if (!(window as any).google) {
@@ -141,17 +59,26 @@ const Home = () => {
           "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
         document.getElementsByTagName("head")[0].appendChild(script);
       }
-      setTimeout(() => {
-        new (window as any).google.translate.TranslateElement(
-          {
-            pageLanguage: "no",
-            // includedLanguages: "ar,en,es,jv,ko,pt,ru,zh-CN,tr",
-            // layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false,
-          },
-          "google_translate_element"
-        );
-      }, 1000);
+      const initTranslator = () => {
+        const generateSelect = () => {
+          if ((window as any).google)
+            new (window as any).google.translate.TranslateElement(
+              {
+                pageLanguage: "no",
+                // includedLanguages: "ar,en,es,jv,ko,pt,ru,zh-CN,tr",
+                // layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+              },
+              "google_translate_element"
+            );
+        };
+        if ((window as any).google) {
+          generateSelect();
+        } else {
+          setTimeout(() => initTranslator(), 1000);
+        }
+      };
+      setTimeout(() => initTranslator(), 1500);
       setTimeout(() => {
         const el = document.querySelector(".goog-te-gadget");
         const childNode = [].slice
@@ -170,7 +97,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.header}>
+      <header
+        className={`${styles.header} ${hideOnScroll ? styles.hidden : ""}`}
+      >
         <a href="#" style={{ display: "flex" }}>
           <Image
             src="/logo.jpg"
@@ -229,12 +158,7 @@ const Home = () => {
             </div>
           </div>
           <div id="google_translate_element"></div>
-          <div className={styles.imageScroller}>
-            <button className={styles.active}></button>
-            <button></button>
-            <button></button>
-            <button></button>
-          </div>
+          <Slideshow />
         </div>
         <div id="omoss" className={styles.aboutus}>
           <h1>Om Saigon Express</h1>
@@ -258,7 +182,7 @@ const Home = () => {
             <a href="#">Ring og bestill</a> nå eller i forveien!
           </p>
           <div className={styles.menuDisplay}>
-            <MyBook />
+            <FlipMenu />
           </div>
           <div>
             <p>eller se menyen i eget vindu...</p>
@@ -272,7 +196,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className={styles.parallaxSection}></div>
+        <div className={`${styles.parallaxSection} ${styles.bg1}`}></div>
         <div id="galleri" className={styles.gallery}>
           <h1>Galleri</h1>
           <div className={styles.galleryWrapper}>
@@ -378,7 +302,7 @@ const Home = () => {
               ></script>
             </div>
           </div>
-          <div className={styles.parallaxSection}></div>
+          <div className={`${styles.parallaxSection} ${styles.bg2}`}></div>
         </div>
         <div className={styles.map}>
           <iframe

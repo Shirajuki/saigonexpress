@@ -17,13 +17,19 @@
     color: white;
     height: 60px;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.7s;
+    &.hidden {
+      // transform: translateY(-60px);
+      background-color: rgba(0, 0, 0, 0);
+    }
     nav {
       display: flex;
       justify-content: center;
       a {
         position: relative;
         font-weight: 600;
+        font-size: 0.9rem;
         text-transform: uppercase;
         transition: color 0.6s;
         &:not(:last-child) {
@@ -108,6 +114,8 @@
       align-items: center;
       background-color: rgb(58, 55, 52);
       .splashWrapper {
+        position: relative;
+        z-index: 2;
         width: 100%;
         padding-left: 7.5%;
         transform: translateY(20px);
@@ -150,6 +158,38 @@
               background-color: #fa731a;
             }
           }
+        }
+      }
+      .slideshowWrapper {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        & > div > div {
+          position: absolute !important;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        & > div {
+          opacity: 0;
+          transition: opacity 1s;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+        }
+        .slideshowImage {
+          position: relative;
+          opacity: 1;
+          width: 100%;
+          height: 100%;
         }
       }
       .imageScroller {
@@ -254,7 +294,27 @@
     .parallaxSection {
       height: 200px;
       width: 100%;
-      background-color: #80c601;
+      padding: 0 !important;
+      position: relative;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &.bg1 {
+        background-image: url(https://saigonexpress.no/images/1.jpg);
+      }
+      &.bg2 {
+        background-image: url(https://saigonexpress.no/images/2.jpg);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(60, 130, 42, 0.75);
+      }
     }
     .gallery {
       background-color: #dee2d5;
