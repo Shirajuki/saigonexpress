@@ -5,6 +5,6 @@ module.exports = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ["www.tripadvisor.com", "no.tripadvisor.com"],
+    domains: ["www.tripadvisor.com", "no.tripadvisor.com", "saigonexpress.no"],
   },
 };

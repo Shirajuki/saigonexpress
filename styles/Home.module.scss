@@ -215,10 +215,27 @@
         background-color: #4f4f4f;
       }
       .menuDisplay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 85vh;
         width: 70vw;
-        background-color: rgb(59, 59, 59);
         margin: 20px 0;
+
+        button {
+          position: absolute;
+          z-index: 2;
+          background-color: rgba(0, 0, 0, 0);
+          &.menuPrevButton {
+            left: 2%;
+          }
+          &.menuNextButton {
+            right: 2%;
+          }
+        }
+        div {
+          margin-top: 0 !important;
+        }
       }
       & > div:not(.menuDisplay) p {
         font-style: italic;
@@ -246,7 +263,7 @@
         display: grid;
         grid-template-columns: repeat(2, calc(50% - 10px));
         grid-gap: 20px;
-        height: 400px;
+        height: auto;
         width: 100%;
         margin-top: 10px;
         & > div {
