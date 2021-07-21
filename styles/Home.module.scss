@@ -1,108 +1,97 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 
   .header {
     display: flex;
+    top: 0;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
+    width: 100%;
+    padding: 0 5%;
+    color: white;
+    height: 60px;
+    nav {
+      display: flex;
+      justify-content: center;
+      a {
+        &:not(:last-child) {
+          padding-right: 5px;
+        }
+      }
+    }
   }
   .main {
-    padding: 5rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(33, 41, 38);
 
-    .title,
-    .description {
-      text-align: center;
-    }
-
-    .title {
-      margin: 0;
-      line-height: 1.15;
-      font-size: 4rem;
-
-      a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      a:hover,
-      a:focus,
-      a:active {
-        text-decoration: underline;
+    .splash {
+      color: white;
+      display: grid;
+      grid-template-columns: 60% 40%;
+      height: 100vh;
+      width: 100%;
+      align-items: center;
+      background-color: rgb(58, 55, 52);
+      padding: 0 10px;
+      .splashWrapper {
+        width: 100%;
+        padding: 10px;
       }
     }
-
-    .description {
-      line-height: 1.5;
-      font-size: 1.5rem;
+    & > div:not(.splash) {
+      & > h1 {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+      }
     }
-
-    .code {
-      background: #fafafa;
-      border-radius: 5px;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-    }
-
-    .grid {
+    .aboutus {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
       max-width: 800px;
-      margin-top: 3rem;
     }
-
-    .card {
-      margin: 1rem;
-      padding: 1.5rem;
-      text-align: left;
-      color: inherit;
-      text-decoration: none;
-      border: 1px solid #eaeaea;
-      border-radius: 10px;
-      transition: color 0.15s ease, border-color 0.15s ease;
-      width: 45%;
-
-      h2 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-      }
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: #0070f3;
-        border-color: #0070f3;
-      }
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 800px;
     }
-
-    .card p {
-      margin: 0;
-      font-size: 1.25rem;
-      line-height: 1.5;
+    .gallery {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 800px;
+    }
+    .contactus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 800px;
     }
   }
 
   .footer {
     width: 100%;
     height: 100px;
-    border-top: 1px solid #eaeaea;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: coral;
 
     .logo {
       height: 1em;

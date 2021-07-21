@@ -1,3 +1,4 @@
+@use 'variables';
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +10,17 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
 }
 a {
   color: inherit;
   text-decoration: none;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: rgb(31, 80, 82);
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
 }
