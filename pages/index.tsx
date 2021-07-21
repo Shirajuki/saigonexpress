@@ -30,45 +30,64 @@ const Home = () => {
           <a href="#">Facebook</a>
         </div>
       </header>
+
       <main className={styles.main}>
         <div className={styles.splash}>
           <div className={styles.splashWrapper}>
             <div className={styles.titleWrapper}>
               <h1 className={styles.title}>Velkommen til Saigon Express</h1>
-              <p>Nå er det levering hos oss via Wolt og Just-eat!</p>
+              <p>
+                Nå er det levering hos oss via <span>Wolt</span> og{" "}
+                <span>Just-eat!</span>
+              </p>
             </div>
             <div className={styles.buttonWrapper}>
               <button>Bestill Wolt</button>
               <button>Bestill Just-eat</button>
+              <br />
               <button>Bestill Takeaway</button>
             </div>
           </div>
+          <div className={styles.languagePicker}>
+            <select name="" id="">
+              <option value="">Select Language...</option>
+            </select>
+          </div>
+          <div className={styles.imageScroller}>
+            <button className={styles.active}></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
         </div>
-
         <div id="omoss" className={styles.aboutus}>
           <h1>Om Saigon Express</h1>
           <p>
             Hos Saigon Express finner du velkjente Sørøst-Asiatiske retter fra
             det vietnamesiske, japanske, thailandske, kinesiske kjøkkenet. Alle
             retter serveres med tilhørende sauser eller dipper, som hver og en
-            sørger for spennende preg på måltidene. Vi legger stor vekt på rask
-            levering, retter lages etter bestillingen, samtidig som vi sørger
-            for at maten alltid er frisk og velsmakende. Vi presenterer en sunn
-            versjon av fastfood som du kan nyte i våre lokaler, eller ta med
-            hjem som take away. Hjertelig velkommen til oss!
+            sørger for spennende preg på måltidene.
           </p>
+          <p>
+            Vi legger stor vekt på rask levering, retter lages etter
+            bestillingen, samtidig som vi sørger for at maten alltid er frisk og
+            velsmakende. Vi presenterer en sunn versjon av fastfood som du kan
+            nyte i våre lokaler, eller ta med hjem som take away.
+          </p>
+          <p>Hjertelig velkommen til oss!</p>
         </div>
         <div id="meny" className={styles.menu}>
           <h1>Vår takeaway meny</h1>
           <p>
-            Vi gjør oppmerksom på at TAKEAWAY mat kan bestilles i forveien, så
-            kan den hentes til ønsket tid! Ring og bestill
+            <a href="">Ring og bestill</a> nå eller i forveien!
           </p>
           <div className={styles.menuDisplay}></div>
           <div>
             <p>... eller se menyen i eget vindu</p>
-            <button>Takeaway PDF meny</button>
-            <button>Fullstendig PDF meny</button>
+            <div>
+              <button>Takeaway PDF meny</button>
+              <button>Fullstendig PDF meny</button>
+            </div>
           </div>
         </div>
         <div className={styles.parallaxSection}></div>
@@ -83,24 +102,21 @@ const Home = () => {
           <div className={styles.infoWrapper}>
             <div className={styles.info}>
               <a href="#">Icon</a>
-              <h3>Title</h3>
-              <p>Text</p>
+              <h3>Besøk oss</h3>
+              <p>Maridalsveien 157, 0465 Oslo</p>
             </div>
             <div className={styles.info}>
               <a href="#">Icon</a>
-              <h3>Title</h3>
-              <p>Text</p>
+              <h3>Kontakt oss</h3>
+              <p>tlf: 222 30 900</p>
+              <p>e-post: epost@saigonexpress.no</p>
             </div>
             <div className={styles.info}>
               <a href="#">Icon</a>
-              <h3>Title</h3>
+              <h3>Åpningstider</h3>
               <p>Text</p>
             </div>
-            <div className={styles.info}>
-              <a href="#">Icon</a>
-              <h3>Title</h3>
-              <p>Text</p>
-            </div>
+            <div className={styles.info}>TripAdvisor</div>
           </div>
           <div className={styles.parallaxSection}></div>
         </div>
@@ -110,11 +126,14 @@ const Home = () => {
       <footer className={styles.footer}>
         <p>
           Copyright © 2021 - Alle rettigheter forbeholdt av Saigon Express
-          SAGENE. Nettside designet av Joiedesign
+          SAGENE.
         </p>
+        <p>Nettside designet av Joiedesign</p>
         <div>
           Page top
-          <button>^</button>
+          <a href="#">
+            <button></button>
+          </a>
         </div>
       </footer>
     </div>

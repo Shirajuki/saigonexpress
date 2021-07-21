@@ -8,8 +8,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Be Vietnam", sans-serif;
   scroll-behavior: smooth;
 }
 a {
@@ -17,10 +17,11 @@ a {
   text-decoration: none;
 }
 button {
-  padding: 10px 20px;
+  padding: 15px 25px;
   border: none;
   background-color: rgb(31, 80, 82);
   font-weight: 700;
   color: white;
   cursor: pointer;
+  text-transform: uppercase;
 }

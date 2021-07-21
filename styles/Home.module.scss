@@ -15,12 +15,19 @@
     padding: 0 5%;
     color: white;
     height: 60px;
+    z-index: 3;
     nav {
       display: flex;
       justify-content: center;
       a {
+        font-weight: 700;
+        text-transform: uppercase;
         &:not(:last-child) {
-          padding-right: 5px;
+          padding-right: 10px;
+        }
+        &.active {
+          color: aliceblue;
+          text-decoration: underline;
         }
       }
     }
@@ -37,71 +44,225 @@
 
     .splash {
       color: white;
+      position: relative;
       display: grid;
       grid-template-columns: 60% 40%;
       height: 100vh;
       width: 100%;
       align-items: center;
       background-color: rgb(58, 55, 52);
-      padding: 0 10px;
       .splashWrapper {
         width: 100%;
-        padding: 10px;
+        padding-left: 7.5%;
+        .titleWrapper {
+          margin-bottom: 20px;
+          .title {
+            font-size: 3.5rem;
+            line-height: 3.5rem;
+          }
+          p {
+            margin-top: 10px;
+            font-size: 1.5rem;
+          }
+        }
+        .buttonWrapper {
+          margin-top: 10px;
+          button {
+            margin: 8px;
+            &:first-child,
+            &:last-child {
+              margin-left: 0;
+            }
+            &:last-child {
+              padding: 15px 60px;
+            }
+          }
+        }
+      }
+      .languagePicker {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+      .imageScroller {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        button {
+          background-color: rgba(0, 0, 0, 0);
+          color: rgba(0, 0, 0, 0);
+          border: 2px solid white;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          padding: 0;
+          margin: 5px 0;
+          &.active {
+            background-color: white;
+          }
+        }
       }
     }
     & > div:not(.splash) {
+      display: flex;
+      padding: 30px 5%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
       & > h1 {
         text-transform: uppercase;
         font-size: 1.6rem;
+        margin-bottom: 12px;
       }
     }
     .aboutus {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 800px;
+      background-color: #f5fbea;
+      text-align: center;
+      p {
+        margin-top: 12px;
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
     }
     .menu {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 800px;
+      background-color: #fff;
+      & > p {
+        margin-bottom: 10px;
+        background-color: bisque;
+        padding: 10px 20px;
+      }
+      .menuDisplay {
+        height: 80vh;
+        width: 60vw;
+        background-color: rgb(169, 204, 192);
+        margin: 20px 0;
+      }
+      & > div {
+        text-align: center;
+        div {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 20px;
+          margin-top: 12px;
+        }
+      }
+    }
+    .parallaxSection {
+      height: 200px;
+      width: 100%;
+      background-color: blueviolet;
     }
     .gallery {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 800px;
+      background-color: #dee2d5;
+      padding-bottom: 50px !important;
+      .galleryWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        height: 400px;
+        width: 100%;
+        margin-top: 10px;
+        .galleryDisplay {
+          width: 100%;
+          background-color: black;
+          border-radius: 10px;
+        }
+      }
     }
     .contactus {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 800px;
+      position: relative;
+      background-color: #dee2d5;
+      padding: 130px 0 0 0 !important;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+      }
+      &::before {
+        width: calc(50% - 230px);
+        height: 190px;
+        background-color: brown;
+        top: 80px;
+        left: 0;
+        border-radius: 0 20px 0 0;
+      }
+      &::after {
+        width: calc(50% - 130px);
+        height: 260px;
+        background-color: brown;
+        top: 10px;
+        right: 0;
+        border-radius: 20px 0 0 0;
+      }
+      .infoWrapper {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 140px;
+        width: 80%;
+        .info {
+          display: grid;
+          grid-template-rows: 20% 30% 1fr 1fr 1fr;
+          padding: 8px 0;
+          width: 100%;
+          height: 140px;
+          text-align: center;
+          background-color: white;
+          p {
+            font-size: 0.9rem;
+          }
+          &:first-of-type {
+            border-radius: 20px 0 0 0;
+          }
+          &:last-of-type {
+            grid-template-rows: 1fr;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 0 20px 0;
+          }
+        }
+      }
+    }
+    .map {
+      height: 300px;
     }
   }
 
   .footer {
     width: 100%;
-    height: 100px;
+    height: 150px;
     display: flex;
+    position: relative;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: coral;
-
-    .logo {
-      height: 1em;
-      margin-left: 0.5rem;
-    }
-    a {
+    background-color: #202420;
+    color: white;
+    font-size: 0.85rem;
+    & > div {
+      width: 90px;
+      right: 20px;
+      position: absolute;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      flex-grow: 1;
+      text-transform: uppercase;
+      button {
+        margin-top: 5px;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+      }
     }
   }
 }
