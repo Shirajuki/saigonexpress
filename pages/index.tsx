@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import ThemeSwitcherIcon from "../components/ThemeSwitcherIcon";
 
 const Home = () => {
   return (
@@ -25,9 +26,24 @@ const Home = () => {
           <a href="#galleri">Galleri</a>
           <a href="#kontaktoss">Kontakt oss</a>
         </nav>
-        <div>
-          <a href="#">Theme</a>
-          <a href="#">Facebook</a>
+        <div className={styles.icons}>
+          <a href="#" className="themeSwitcherIcon">
+            <ThemeSwitcherIcon />
+          </a>
+          <a href="#" className="facebookIcon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.9167 0C5.8125 0 0 5.79958 0 12.9425C0 19.4008 4.7275 24.7612 10.9017 25.73V16.6883H7.62083V12.9425H10.9017V10.0879C10.9017 6.84583 12.8263 5.06333 15.7842 5.06333C17.1921 5.06333 18.6646 5.30875 18.6646 5.30875V8.49917H17.0371C15.4354 8.49917 14.9317 9.49375 14.9317 10.5142V12.9425H18.5225L17.9412 16.6883H14.9317V25.73C17.9754 25.2493 20.747 23.6963 22.7462 21.3513C24.7453 19.0064 25.8402 16.024 25.8333 12.9425C25.8333 5.79958 20.0208 0 12.9167 0Z"
+                fill="white"
+              />
+            </svg>
+          </a>
         </div>
       </header>
 
@@ -101,20 +117,60 @@ const Home = () => {
         <div id="kontaktoss" className={styles.contactus}>
           <div className={styles.infoWrapper}>
             <div className={styles.info}>
-              <a href="#">Icon</a>
+              <svg
+                width="21"
+                height="30"
+                viewBox="0 0 21 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.5 0C4.695 0 0 4.695 0 10.5C0 18.375 10.5 30 10.5 30C10.5 30 21 18.375 21 10.5C21 4.695 16.305 0 10.5 0ZM10.5 14.25C8.43 14.25 6.75 12.57 6.75 10.5C6.75 8.43 8.43 6.75 10.5 6.75C12.57 6.75 14.25 8.43 14.25 10.5C14.25 12.57 12.57 14.25 10.5 14.25Z"
+                  fill="#769E02"
+                />
+              </svg>
+
               <h3>Besøk oss</h3>
               <p>Maridalsveien 157, 0465 Oslo</p>
             </div>
             <div className={styles.info}>
-              <a href="#">Icon</a>
+              <svg
+                width="30"
+                height="24"
+                viewBox="0 0 30 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27 0H3C1.35 0 0.015 1.35 0.015 3L0 21C0 22.65 1.35 24 3 24H27C28.65 24 30 22.65 30 21V3C30 1.35 28.65 0 27 0ZM27 6L15 13.5L3 6V3L15 10.5L27 3V6Z"
+                  fill="#769E02"
+                />
+              </svg>
+
               <h3>Kontakt oss</h3>
               <p>tlf: 222 30 900</p>
               <p>e-post: epost@saigonexpress.no</p>
             </div>
             <div className={styles.info}>
-              <a href="#">Icon</a>
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.985 3C9.705 3 3 9.72 3 18C3 26.28 9.705 33 17.985 33C26.28 33 33 26.28 33 18C33 9.72 26.28 3 17.985 3ZM18 30C11.37 30 6 24.63 6 18C6 11.37 11.37 6 18 6C24.63 6 30 11.37 30 18C30 24.63 24.63 30 18 30Z"
+                  fill="#769E02"
+                />
+                <path
+                  d="M18.75 10.5H16.5V19.5L24.375 24.225L25.5 22.38L18.75 18.375V10.5Z"
+                  fill="#769E02"
+                />
+              </svg>
+
               <h3>Åpningstider</h3>
-              <p>Text</p>
+              <p>Alle dager: 13.00 - 21.00</p>
             </div>
             <div className={styles.info}>TripAdvisor</div>
           </div>
@@ -132,7 +188,21 @@ const Home = () => {
         <div>
           Page top
           <a href="#">
-            <button></button>
+            <button>
+              <svg
+                width="30"
+                height="12"
+                viewBox="0 0 36 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 16L18.1029 4L33.6 16"
+                  stroke="#DDDDDD"
+                  strokeWidth="5"
+                />
+              </svg>
+            </button>
           </a>
         </div>
       </footer>

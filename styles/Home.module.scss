@@ -23,13 +23,18 @@
         font-weight: 700;
         text-transform: uppercase;
         &:not(:last-child) {
-          padding-right: 10px;
+          padding-right: 12px;
         }
         &.active {
           color: aliceblue;
           text-decoration: underline;
         }
       }
+    }
+    .icons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 5px;
     }
   }
   .main {
@@ -123,7 +128,7 @@
       }
     }
     .aboutus {
-      background-color: #f5fbea;
+      background-color: #dee2d5;
       text-align: center;
       p {
         margin-top: 12px;
@@ -209,14 +214,18 @@
         grid-template-columns: repeat(3, 1fr);
         height: 140px;
         width: 80%;
+        max-width: 780px;
         .info {
           display: grid;
-          grid-template-rows: 20% 30% 1fr 1fr 1fr;
+          grid-template-rows: 30% 25% 1fr 1fr 1fr;
           padding: 8px 0;
           width: 100%;
           height: 140px;
           text-align: center;
           background-color: white;
+          svg {
+            margin: 8px auto 0 auto;
+          }
           p {
             font-size: 0.9rem;
           }
@@ -262,6 +271,9 @@
         width: 50px;
         height: 50px;
         border-radius: 10px;
+        svg {
+          transform: translateX(-15px);
+        }
       }
     }
   }
