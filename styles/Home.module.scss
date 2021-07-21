@@ -151,11 +151,6 @@
           }
         }
       }
-      .languagePicker {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-      }
       .imageScroller {
         display: flex;
         flex-direction: column;
@@ -303,6 +298,7 @@
           background-color: white;
           svg {
             margin: 8px auto 0 auto;
+            align-self: center;
           }
           h3 {
             color: #769e02;
@@ -324,6 +320,7 @@
     }
     .map {
       height: 300px;
+      padding: 0 !important;
     }
   }
 

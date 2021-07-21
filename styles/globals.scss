@@ -26,3 +26,26 @@ a.btn {
   cursor: pointer;
   text-transform: uppercase;
 }
+// Tripadvisor
+#CDSRATINGWIDGET792 {
+  width: 100%;
+  padding: 6px 30px 0;
+}
+// Google translate
+.goog-te-gadget {
+  color: rgba(0, 0, 0, 0) !important;
+  span {
+    display: none;
+  }
+  .goog-te-combo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 4px;
+  }
+}
+html.translated-ltr {
+  header {
+    margin-top: 38px !important;
+  }
+}

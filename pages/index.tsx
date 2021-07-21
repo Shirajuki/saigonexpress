@@ -2,8 +2,38 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import ThemeSwitcherIcon from "../components/ThemeSwitcherIcon";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    const googleTranslateElementInit = () => {
+      if (!(window as any).google) {
+        const script = document.createElement("script");
+        script.src =
+          "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        document.getElementsByTagName("head")[0].appendChild(script);
+      }
+      setTimeout(() => {
+        new (window as any).google.translate.TranslateElement(
+          {
+            pageLanguage: "no",
+            // includedLanguages: "ar,en,es,jv,ko,pt,ru,zh-CN,tr",
+            // layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }, 1000);
+      setTimeout(() => {
+        const el = document.querySelector(".goog-te-gadget");
+        const childNode = [].slice
+          .call(el?.childNodes, 0)
+          .find((n: any) => n?.nodeType === Node.TEXT_NODE);
+        if (childNode) el?.removeChild(childNode);
+      }, 3210);
+    };
+    googleTranslateElementInit();
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -64,11 +94,7 @@ const Home = () => {
               <button>Bestill Takeaway</button>
             </div>
           </div>
-          <div className={styles.languagePicker}>
-            <select name="" id="">
-              <option value="">Select Language...</option>
-            </select>
-          </div>
+          <div id="google_translate_element"></div>
           <div className={styles.imageScroller}>
             <button className={styles.active}></button>
             <button></button>
@@ -80,9 +106,9 @@ const Home = () => {
           <h1>Om Saigon Express</h1>
           <p>
             Hos Saigon Express finner du velkjente Sørøst-Asiatiske retter fra
-            det vietnamesiske, japanske, thailandske, kinesiske kjøkkenet. Alle
-            retter serveres med tilhørende sauser eller dipper, som hver og en
-            sørger for spennende preg på måltidene.
+            det vietnamesiske, japanske, thailandske og det kinesiske kjøkkenet.
+            Alle retter serveres med tilhørende sauser eller dipper, som hver og
+            en sørger for spennende preg på måltidene.
           </p>
           <p>
             Vi legger stor vekt på rask levering, retter lages etter
@@ -172,11 +198,48 @@ const Home = () => {
               <h3>Åpningstider</h3>
               <p>Alle dager: 13.00 - 21.00</p>
             </div>
-            <div className={styles.info}>TripAdvisor</div>
+            <div className={styles.info}>
+              <div
+                id="TA_cdsratingsonlynarrow792"
+                className="TA_cdsratingsonlynarrow"
+              >
+                <ul id="UsuJ5yE" className="TA_links C3TYdpS6I">
+                  <li id="SVJNf84Rk" className="UBwjxAr">
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://no.tripadvisor.com/Restaurant_Review-g190479-d6407063-Reviews-Saigon_Express-Oslo_Eastern_Norway.html"
+                    >
+                      <Image
+                        src="https://no.tripadvisor.com/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-18034-2.svg"
+                        alt="TripAdvisor"
+                        width={200}
+                        height={50}
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <script
+                async
+                src="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&amp;uniq=792&amp;locationId=6407063&amp;lang=en_US&amp;border=true&amp;display_version=2"
+                data-loadtrk
+                onLoad={() => ((this as any).loadtrk = true)}
+              ></script>
+            </div>
           </div>
           <div className={styles.parallaxSection}></div>
         </div>
-        <div className={styles.map}></div>
+        <div className={styles.map}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6414438549562!2d10.75468121575559!3d59.938091669105255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e1256b3a773%3A0x8110625bb9f22ffa!2sSaigon+Express.!5e0!3m2!1sno!2sno!4v1457627536105"
+            frameBorder="0"
+            width="100%"
+            height="450"
+            allowFullScreen={false}
+            title="Google Maps"
+          ></iframe>
+        </div>
       </main>
 
       <footer className={styles.footer}>

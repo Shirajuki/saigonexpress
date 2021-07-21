@@ -4,4 +4,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  images: {
+    domains: ["www.tripadvisor.com", "no.tripadvisor.com"],
+  },
 };
