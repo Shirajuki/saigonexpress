@@ -13,12 +13,14 @@ const Home = () => {
       </Head>
 
       <header className={styles.header}>
-        <Image
-          src="/logo.jpg"
-          alt="saigonexpress logo"
-          width={140}
-          height={50}
-        />
+        <a href="#" style={{ display: "flex" }}>
+          <Image
+            src="/logo.jpg"
+            alt="saigonexpress logo"
+            width={140}
+            height={50}
+          />
+        </a>
         <nav>
           <a href="#">Hjem</a>
           <a href="#omoss">Om oss</a>
@@ -99,8 +101,8 @@ const Home = () => {
           <div>
             <p>eller se menyen i eget vindu...</p>
             <div>
-              <button>Takeaway PDF meny</button>
-              <button>Fullstendig PDF meny</button>
+              <a className={`btn ${styles.btn}`}>Takeaway PDF meny</a>
+              <a className={`btn ${styles.btn}`}>Fullstendig PDF meny</a>
             </div>
           </div>
         </div>

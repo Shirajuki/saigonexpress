@@ -113,13 +113,14 @@
         transform: translateY(20px);
         .titleWrapper {
           margin-bottom: 20px;
+          font-weight: 700;
           .title {
             font-size: 3.5rem;
             line-height: 3.5rem;
           }
           p {
             margin-top: 10px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             a {
               position: relative;
               color: #bcf05d;
@@ -211,10 +212,10 @@
         background-color: #dee2d5;
         padding: 10px 20px;
       }
-      a {
+      a:not(.btn) {
         color: #fa731a;
       }
-      button {
+      a.btn {
         background-color: #4f4f4f;
       }
       .menuDisplay {
