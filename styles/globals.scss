@@ -49,3 +49,17 @@ html.translated-ltr {
     margin-top: 38px !important;
   }
 }
+// React-image-gallery
+.image-gallery-content {
+  background-color: #000;
+  border-radius: 10px;
+}
+.image-gallery-image {
+  width: 96% !important;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+  height: 70px !important;
+}

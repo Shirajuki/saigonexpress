@@ -2,8 +2,35 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import ThemeSwitcherIcon from "../components/ThemeSwitcherIcon";
+import ImageGallery from "react-image-gallery";
 import { useEffect } from "react";
 
+const images = [
+  {
+    original: "https://picsum.photos/id/1018/1000/600/",
+    thumbnail: "https://picsum.photos/id/1018/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1015/1000/600/",
+    thumbnail: "https://picsum.photos/id/1015/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1019/1000/600/",
+    thumbnail: "https://picsum.photos/id/1019/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1018/1000/600/",
+    thumbnail: "https://picsum.photos/id/1018/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1015/1000/600/",
+    thumbnail: "https://picsum.photos/id/1015/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1019/1000/600/",
+    thumbnail: "https://picsum.photos/id/1019/250/150/",
+  },
+];
 const Home = () => {
   useEffect(() => {
     const googleTranslateElementInit = () => {
@@ -88,10 +115,16 @@ const Home = () => {
               </p>
             </div>
             <div className={styles.buttonWrapper}>
-              <button>Bestill Wolt</button>
-              <button>Bestill Just-eat</button>
+              <a href="#" className="btn">
+                Bestill Wolt
+              </a>
+              <a href="#" className="btn">
+                Bestill Just-eat
+              </a>
               <br />
-              <button>Bestill Takeaway</button>
+              <a href="#" className="btn">
+                Bestill Takeaway
+              </a>
             </div>
           </div>
           <div id="google_translate_element"></div>
@@ -127,8 +160,12 @@ const Home = () => {
           <div>
             <p>eller se menyen i eget vindu...</p>
             <div>
-              <a className={`btn ${styles.btn}`}>Takeaway PDF meny</a>
-              <a className={`btn ${styles.btn}`}>Fullstendig PDF meny</a>
+              <a href="#" className={`btn ${styles.btn}`}>
+                Takeaway PDF meny
+              </a>
+              <a href="#" className={`btn ${styles.btn}`}>
+                Fullstendig PDF meny
+              </a>
             </div>
           </div>
         </div>
@@ -136,8 +173,18 @@ const Home = () => {
         <div id="galleri" className={styles.gallery}>
           <h1>Galleri</h1>
           <div className={styles.galleryWrapper}>
-            <div className={styles.galleryDisplay}></div>
-            <div className={styles.galleryDisplay}></div>
+            <ImageGallery
+              className={styles.galleryDisplay}
+              items={images}
+              lazyload={true}
+              autoPlay={true}
+            />
+            <ImageGallery
+              className={styles.galleryDisplay}
+              items={images}
+              lazyLoad={true}
+              autoPlay={true}
+            />
           </div>
         </div>
         <div id="kontaktoss" className={styles.contactus}>

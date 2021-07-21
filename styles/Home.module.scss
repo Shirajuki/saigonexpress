@@ -138,8 +138,9 @@
         }
         .buttonWrapper {
           margin-top: 10px;
-          button {
+          a {
             margin: 8px;
+            display: inline-block;
             &:first-child,
             &:last-child {
               margin-left: 0;
@@ -243,15 +244,17 @@
       padding-bottom: 50px !important;
       .galleryWrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, calc(50% - 10px));
         grid-gap: 20px;
         height: 400px;
         width: 100%;
         margin-top: 10px;
-        .galleryDisplay {
+        & > div {
           width: 100%;
-          background-color: black;
           border-radius: 10px;
+          img {
+            width: 100%;
+          }
         }
       }
     }

@@ -17,10 +17,13 @@
   "dependencies": {
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-image-gallery": "^1.2.5"
   },
   "devDependencies": {
+    "@types/prettier": "^2.3.2",
     "@types/react": "17.0.14",
+    "@types/react-image-gallery": "^1.0.4",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
