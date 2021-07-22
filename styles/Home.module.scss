@@ -557,16 +557,18 @@
             &:hover {
               color: #bcf05d;
               &::after {
-                width: 100%;
+                width: 80%;
               }
             }
             &::after {
               content: "";
               width: 0;
-              height: 2px;
-              background-color: #bcf05d;
+              height: 100%;
+              background-color: rgba(188, 240, 93, 0.35);
               position: absolute;
-              left: 0;
+              border-radius: 50px 0 0 50px;
+              right: 0;
+              left: auto;
               bottom: -2px;
               transition: width 0.5s;
             }
