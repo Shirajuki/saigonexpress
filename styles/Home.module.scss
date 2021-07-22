@@ -318,7 +318,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 85vh;
+        height: auto;
         width: 70vw;
         margin: 20px 0;
         overflow: hidden;
@@ -646,8 +646,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 85vh;
-          width: 70vw;
+          width: 80vw;
           margin: 20px 0;
 
           button {
@@ -759,10 +758,11 @@
         .splash {
           grid-template-columns: 100%;
           font-size: 9pt;
+          align-items: flex-end;
           .splashWrapper {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             height: 80%;
             width: 85%;
             padding-left: 15px;

@@ -44,7 +44,12 @@ const FlipMenu = (props: any) => {
       </button>
       <HTMLFlipBook
         width={300}
-        height={500}
+        height={600}
+        size="stretch"
+        minWidth={250}
+        maxWidth={600}
+        minHeight={300}
+        maxHeight={800}
         usePortrait={true}
         showCover={true}
         mobileScrollSupport={true}
@@ -53,9 +58,9 @@ const FlipMenu = (props: any) => {
       >
         <Page number="1">
           <Image
-            src="/images/pages/1.jpg"
-            width={580}
-            height={1000}
+            src="/images/pages/takeawaymeny-1.png"
+            width={1070}
+            height={2077}
             alt="Saigon Express menu page 1"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
@@ -63,9 +68,9 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="2">
           <Image
-            src="/images/pages/2.jpg"
-            width={580}
-            height={1000}
+            src="/images/pages/takeawaymeny-2.png"
+            width={1070}
+            height={2077}
             alt="Saigon Express menu page2"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
@@ -73,9 +78,9 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="3">
           <Image
-            src="/images/pages/3.jpg"
-            width={580}
-            height={1000}
+            src="/images/pages/takeawaymeny-3.png"
+            width={1070}
+            height={2077}
             alt="Saigon Express menu page 3"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
@@ -83,9 +88,9 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="4">
           <Image
-            src="/images/pages/4.jpg"
-            width={580}
-            height={1000}
+            src="/images/pages/takeawaymeny-4.png"
+            width={1070}
+            height={2077}
             alt="Saigon Express menu page 4"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
@@ -93,9 +98,9 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="5">
           <Image
-            src="/images/pages/5.jpg"
-            width={580}
-            height={1000}
+            src="/images/pages/takeawaymeny-5.png"
+            width={1070}
+            height={2077}
             alt="Saigon Express menu page 5"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
@@ -103,9 +108,9 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="6">
           <Image
-            src="/images/pages/6.jpg"
-            width={580}
-            height={1000}
+            src="/images/pages/takeawaymeny-6.png"
+            width={1070}
+            height={2077}
             alt="Saigon Express menu page 6"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="

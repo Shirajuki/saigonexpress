@@ -367,7 +367,7 @@ const Home = () => {
           Copyright © 2021 - Alle rettigheter forbeholdt av Saigon Express
           SAGENE.
         </p>
-        <p>Nettside designet av Joiedesign (Jonny Ngo Luong)</p>
+        <p>Nettside designet av Jonny Ngo Luong</p>
         <div>
           <p>Page top</p>
           <a className={`btn ${styles.btn}`} href="#">
