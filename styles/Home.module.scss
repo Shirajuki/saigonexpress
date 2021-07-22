@@ -374,6 +374,7 @@
       background-color: #dee2d5;
       padding-bottom: 50px !important;
       .galleryWrapper {
+        z-index: 1;
         display: grid;
         grid-template-columns: repeat(2, calc(50% - 10px));
         grid-gap: 20px;
@@ -800,6 +801,9 @@
               height: 15px;
             }
           }
+        }
+        .aboutus {
+          font-size: 11pt;
         }
       }
     }
