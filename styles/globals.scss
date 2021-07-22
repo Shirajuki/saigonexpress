@@ -1,4 +1,4 @@
-@use 'variables';
+@import "variables";
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +12,43 @@ body {
   font-family: "Be Vietnam", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+body {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --text-dark: #{$text-dark};
+  --text-light: #{$text-light};
+  --text-darker: #656565;
+  --title: #{$title};
+  --title-dark: #{$title-dark};
+  --text-footer: #bebebe;
+  --primary-button: #{$primary-button};
+  --secondary-button: #{$secondary-button};
+  --neutral-button: #{$neutral-button};
+  --bg-footer: #{$bg-footer};
+  --bg: #{$bg};
+  --bg-dark: #{$bg-dark};
+  --bg-light: #{$bg-light};
+  --bg-navBorder: #dbdbdb;
+  --transparent: #{$transparent};
+}
+.darkmode {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --text-dark: #{$text-light};
+  --text-light: #{$text-dark};
+  --text-darker: #8f8f8f;
+  --title: #bae173;
+  --title-dark: #{$title-dark};
+  --primary-button: #{$primary-button};
+  --secondary-button: #{$secondary-button};
+  --neutral-button: #{$neutral-button};
+  --bg-footer: #{$bg-footer};
+  --bg: #{$bg-footer};
+  --bg-dark: #{$bg-light};
+  --bg-light: #252e21;
+  --bg-navBorder: #242e21;
+  --transparent: #{$transparent};
 }
 a {
   color: inherit;

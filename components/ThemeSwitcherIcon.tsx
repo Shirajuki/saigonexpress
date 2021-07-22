@@ -1,8 +1,11 @@
 import styles from "../styles/Home.module.scss";
 import { useEffect, useState } from "react";
 
-const ThemeSwitcherIcon = () => {
-  const [darkmode, setDarkmode] = useState(false);
+interface IProps {
+  darkmode: boolean;
+  setDarkmode: (bool: boolean) => void;
+}
+const ThemeSwitcherIcon = ({ darkmode, setDarkmode }: IProps) => {
   useEffect(() => {
     console.log("darkmode:", darkmode);
   }, [darkmode]);

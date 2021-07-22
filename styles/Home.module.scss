@@ -1,10 +1,11 @@
-@use 'variables';
+@import "variables";
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--text-dark);
 
   .header {
     display: flex;
@@ -21,7 +22,7 @@
     transition: background-color 0.7s;
     &.hidden {
       // transform: translateY(-60px);
-      background-color: rgba(0, 0, 0, 0);
+      background-color: var(--transparent);
     }
     nav {
       display: flex;
@@ -37,7 +38,7 @@
         }
         &.active,
         &:hover {
-          color: #bcf05d;
+          color: var(--primary);
           &::after {
             width: 100%;
           }
@@ -46,7 +47,7 @@
           content: "";
           width: 0;
           height: 2px;
-          background-color: #bcf05d;
+          background-color: var(--primary);
           position: absolute;
           left: 0;
           bottom: -2px;
@@ -60,7 +61,7 @@
       grid-gap: 8px;
       .themeSwitcherIcon {
         padding: initial;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: var(--transparent);
         svg > path {
           &:first-of-type {
             transition: fill 0.6s, transform 1s;
@@ -70,7 +71,7 @@
         }
         &:hover {
           svg > path {
-            fill: #bcf05d;
+            fill: var(--primary);
           }
         }
         &.dark {
@@ -88,13 +89,13 @@
         }
         &:hover {
           svg > path {
-            fill: #bcf05d;
+            fill: var(--primary);
           }
         }
       }
       .burgerNav {
         position: relative;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: var(--transparent);
         width: 24px;
         height: 24px;
         padding: 0;
@@ -121,7 +122,7 @@
           height: 2px;
           left: 0;
           top: 4px;
-          background-color: rgb(33, 41, 38);
+          background-color: var(--bg-dark);
           transition: all 0.5s;
           &:first-of-type {
             top: 12px;
@@ -142,7 +143,7 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(33, 41, 38);
+    background-color: var(--bg-dark);
 
     .splash {
       color: white;
@@ -152,7 +153,7 @@
       height: 100vh;
       width: 100%;
       align-items: center;
-      background-color: rgb(58, 55, 52);
+      background-color: var(--bg-dark);
       .splashWrapper {
         position: relative;
         z-index: 2;
@@ -171,12 +172,12 @@
             font-size: 1.4rem;
             a {
               position: relative;
-              color: #bcf05d;
+              color: var(--primary);
               &::after {
                 content: "";
                 width: 100%;
                 height: 2px;
-                background-color: #bcf05d;
+                background-color: var(--primary);
                 position: absolute;
                 left: 0;
                 bottom: 0;
@@ -195,7 +196,7 @@
             }
             &:last-child {
               padding: 15px 50px;
-              background-color: #fa731a;
+              background-color: var(--secondary-button);
             }
           }
         }
@@ -242,8 +243,8 @@
         top: 50%;
         transform: translateY(-50%);
         button {
-          background-color: rgba(0, 0, 0, 0);
-          color: rgba(0, 0, 0, 0);
+          background-color: var(--transparent);
+          color: var(--transparent);
           border: 2px solid white;
           border-radius: 50%;
           width: 15px;
@@ -268,15 +269,16 @@
       justify-content: center;
       flex-wrap: wrap;
       width: 100%;
+      transition: all 0.3s;
       & > h1 {
         text-transform: uppercase;
         font-size: 1.6rem;
         margin-bottom: 12px;
-        color: #80c601;
+        color: var(--title);
       }
     }
     .aboutus {
-      background-color: #dee2d5;
+      background-color: var(--bg-light);
       text-align: center;
       p {
         margin-top: 12px;
@@ -287,25 +289,25 @@
     }
     .menu {
       position: relative;
-      background-color: #fff;
+      background-color: var(--bg);
+      margin-top: -1px;
       &::before {
         content: "";
         width: 100%;
         position: absolute;
         bottom: 0;
         height: 300px;
-        background-color: #dee2d5;
+        background-color: var(--bg-light);
       }
       & > p {
-        margin-bottom: 10px;
-        background-color: #dee2d5;
+        background-color: var(--bg-light);
         padding: 10px 20px;
       }
       a:not(.btn) {
         color: #fa731a;
       }
       a.btn {
-        background-color: #4f4f4f;
+        background-color: var(--neutral-button);
       }
       .menuDisplay {
         display: flex;
@@ -318,7 +320,7 @@
         button {
           position: absolute;
           z-index: 2;
-          background-color: rgba(0, 0, 0, 0);
+          background-color: var(--transparent);
           &.menuPrevButton {
             left: 2%;
           }
@@ -332,7 +334,7 @@
       }
       & > div:not(.menuDisplay) p {
         font-style: italic;
-        color: #656565;
+        color: var(--text-darker);
       }
       & > div {
         text-align: center;
@@ -371,7 +373,7 @@
       }
     }
     .gallery {
-      background-color: #dee2d5;
+      background-color: var(--bg-light);
       padding-bottom: 50px !important;
       .galleryWrapper {
         z-index: 1;
@@ -392,7 +394,7 @@
     }
     .contactus {
       position: relative;
-      background-color: #dee2d5;
+      background-color: var(--bg-light);
       padding: 130px 0 0 0 !important;
       &::before,
       &::after {
@@ -402,7 +404,7 @@
       &::before {
         width: calc(50% - 230px);
         height: 210px;
-        background-color: #f38339;
+        background-color: var(--secondary);
         top: 80px;
         left: 0;
         border-radius: 0 20px 0 0;
@@ -410,7 +412,7 @@
       &::after {
         width: calc(50% - 130px);
         height: 270px;
-        background-color: #bcf05d;
+        background-color: var(--primary);
         top: 10px;
         right: 0;
         border-radius: 20px 0 0 0;
@@ -430,13 +432,13 @@
           width: 100%;
           height: 150px;
           text-align: center;
-          background-color: white;
+          background-color: var(--bg);
           svg {
             margin: 8px auto 0 auto;
             align-self: center;
           }
           h3 {
-            color: #769e02;
+            color: var(--title-dark);
           }
           p {
             font-size: 0.9rem;
@@ -467,8 +469,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #202420;
-    color: white;
+    background-color: var(--bg-footer);
+    color: var(--text-footer);
     font-size: 0.85rem;
     & > div {
       width: 90px;
@@ -492,13 +494,7 @@
     }
   }
 }
-/*
-
-
-
-
-
-*/
+// Media queries
 @media all and (max-width: 880px) {
   body {
     .container.priority {
@@ -508,9 +504,9 @@
           height: 100vh;
           position: absolute;
           top: 0;
-          color: #3d3d3d;
+          color: var(--text-dark);
           right: 0;
-          background-color: aliceblue;
+          background-color: var(--bg);
           width: 80%;
           text-align: right;
           justify-content: flex-start;
@@ -521,7 +517,7 @@
             width: 100%;
             position: absolute;
             height: 1px;
-            background-color: #dbdbdb;
+            background-color: var(--bg-navBorder);
           }
           & + .whitespace {
             position: absolute;
@@ -555,7 +551,7 @@
             padding-right: 24px;
             &.active,
             &:hover {
-              color: #bcf05d;
+              color: var(--primary);
               &::after {
                 width: 80%;
               }
@@ -581,10 +577,10 @@
           z-index: 3;
           &.dark {
             path {
-              fill: rgb(33, 41, 38) !important;
+              fill: var(--bg-dark) !important;
             }
             span {
-              background-color: rgb(33, 41, 38) !important;
+              background-color: var(--bg-dark) !important;
             }
           }
           .burgerNav {
@@ -595,7 +591,7 @@
           }
           .themeSwitcherIcon {
             padding: initial;
-            background-color: rgba(0, 0, 0, 0);
+            background-color: var(--transparent);
             svg > path {
               fill: #fff;
               &:first-of-type {
@@ -607,7 +603,7 @@
             }
             &:hover {
               svg > path {
-                fill: #bcf05d;
+                fill: var(--primary);
               }
             }
             &.dark {
@@ -637,9 +633,6 @@
         }
       }
       .menu {
-        & > p {
-          margin-bottom: 20px;
-        }
         a.btn {
           padding: 12px 30px;
         }
@@ -654,7 +647,7 @@
           button {
             position: absolute;
             z-index: 2;
-            background-color: rgba(0, 0, 0, 0);
+            background-color: var(--transparent);
 
             &.menuPrevButton {
               left: -20px;
@@ -674,7 +667,6 @@
         }
         & > div:not(.menuDisplay) p {
           font-style: italic;
-          color: #656565;
         }
         & > div {
           margin-top: 30px;
@@ -687,6 +679,7 @@
       }
       .gallery {
         height: auto;
+        padding: 30px 10%;
         .galleryWrapper {
           grid-template-columns: 100%;
           grid-template-rows: 1fr 1fr;
@@ -721,7 +714,7 @@
             width: 100%;
             height: 150px;
             text-align: center;
-            background-color: white;
+            background-color: var(--bg);
           }
         }
       }
@@ -790,7 +783,6 @@
                 margin-left: 0;
                 &:last-child {
                   padding: 12px 35px;
-                  background-color: #fa731a;
                 }
               }
             }
