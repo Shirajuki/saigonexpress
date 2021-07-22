@@ -42,6 +42,7 @@ const images = [
 ];
 const Home = () => {
   const [hideOnScroll, setHideOnScroll] = useState(true);
+  const [hideMobileNav, setHideMobileNav] = useState(true);
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -89,6 +90,7 @@ const Home = () => {
     };
     googleTranslateElementInit();
   }, []);
+
   return (
     <div className={`${styles.container} ${styles.priority}`}>
       <Head>
@@ -100,7 +102,7 @@ const Home = () => {
       <header
         className={`${styles.header} ${hideOnScroll ? styles.hidden : ""}`}
       >
-        <a href="#" style={{ display: "flex" }}>
+        <a href="#" style={{ display: "flex", zIndex: -1 }}>
           <Image
             src="/logo.jpg"
             alt="saigonexpress logo"
@@ -108,14 +110,15 @@ const Home = () => {
             height={50}
           />
         </a>
-        <nav>
+        <nav className={hideMobileNav ? styles.hidden : ""}>
           <a href="#">Hjem</a>
           <a href="#omoss">Om oss</a>
           <a href="#meny">Meny</a>
           <a href="#galleri">Galleri</a>
           <a href="#kontaktoss">Kontakt oss</a>
         </nav>
-        <div className={styles.icons}>
+        <div className={styles.whitespace}></div>
+        <div className={`${styles.icons} ${!hideMobileNav ? styles.dark : ""}`}>
           <ThemeSwitcherIcon />
           <a href="#" className={styles.facebookIcon}>
             <svg
@@ -131,6 +134,16 @@ const Home = () => {
               />
             </svg>
           </a>
+          <button
+            className={`${styles.burgerNav} ${
+              !hideMobileNav ? styles.active : ""
+            }`}
+            onClick={() => setHideMobileNav(!hideMobileNav)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </header>
 
@@ -323,23 +336,21 @@ const Home = () => {
         </p>
         <p>Nettside designet av Joiedesign</p>
         <div>
-          Page top
-          <a href="#">
-            <button>
-              <svg
-                width="30"
-                height="12"
-                viewBox="0 0 36 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 16L18.1029 4L33.6 16"
-                  stroke="#DDDDDD"
-                  strokeWidth="5"
-                />
-              </svg>
-            </button>
+          <p>Page top</p>
+          <a className={`btn ${styles.btn}`} href="#">
+            <svg
+              width="30"
+              height="12"
+              viewBox="0 0 36 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 16L18.1029 4L33.6 16"
+                stroke="#DDDDDD"
+                strokeWidth="5"
+              />
+            </svg>
           </a>
         </div>
       </footer>
