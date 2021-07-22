@@ -99,6 +99,8 @@ const Home = () => {
           <ThemeSwitcherIcon darkmode={darkmode} setDarkmode={setDarkmode} />
           <a
             href="https://www.facebook.com/saigonexpressoslo/"
+            target="_blank"
+            rel="noreferrer"
             className={styles.facebookIcon}
           >
             <svg
@@ -134,11 +136,19 @@ const Home = () => {
               <h1 className={styles.title}>Velkommen til Saigon Express</h1>
               <p>
                 Nå er det levering hos oss via{" "}
-                <a href="https://wolt.com/en/nor/oslo/restaurant/saigon-express">
+                <a
+                  href="https://wolt.com/en/nor/oslo/restaurant/saigon-express"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Wolt
                 </a>{" "}
                 og{" "}
-                <a href="https://www.just-eat.no/en/menu/saigon-express">
+                <a
+                  href="https://www.just-eat.no/en/menu/saigon-express"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   JustEat!
                 </a>
               </p>
@@ -146,12 +156,16 @@ const Home = () => {
             <div className={styles.buttonWrapper}>
               <a
                 href="https://wolt.com/en/nor/oslo/restaurant/saigon-express"
+                target="_blank"
+                rel="noreferrer"
                 className="btn"
               >
                 Bestill Wolt
               </a>
               <a
                 href="https://www.just-eat.no/en/menu/saigon-express"
+                target="_blank"
+                rel="noreferrer"
                 className="btn"
               >
                 Bestill Just-eat
