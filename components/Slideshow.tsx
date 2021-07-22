@@ -3,12 +3,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const images = [
-  "https://picsum.photos/id/1018/1000/600/",
-  "https://picsum.photos/id/1015/1000/600/",
-  "https://picsum.photos/id/1019/1000/600/",
-  "https://picsum.photos/id/1018/1000/600/",
-  "https://picsum.photos/id/1015/1000/600/",
-  "https://picsum.photos/id/1019/1000/600/",
+  "/images/slideshow/sushi-2.jpg",
+  "/images/slideshow/51a.jpg",
+  "/images/slideshow/bunthitxao2.jpg",
+  "/images/slideshow/slideshow.jpg",
 ];
 const Slideshow = () => {
   const [selected, setSelected] = useState<number>(0);
@@ -31,9 +29,9 @@ const Slideshow = () => {
           >
             <Image
               src={image}
-              width={1000}
-              height={600}
               alt={"slideshow" + index}
+              layout="fill"
+              objectFit="cover"
             />
           </div>
         ))}

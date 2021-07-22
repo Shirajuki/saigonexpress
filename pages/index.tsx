@@ -7,33 +7,8 @@ import ImageGallery from "react-image-gallery";
 import Slideshow from "../components/Slideshow";
 import React, { useEffect, useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import { sushiImages, warmImages } from "../utils/imagePaths";
 
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  },
-];
 const Home = () => {
   const [hideOnScroll, setHideOnScroll] = useState(true);
   const [hideMobileNav, setHideMobileNav] = useState(true);
@@ -122,7 +97,10 @@ const Home = () => {
         <div className={styles.whitespace}></div>
         <div className={`${styles.icons} ${!hideMobileNav ? styles.dark : ""}`}>
           <ThemeSwitcherIcon darkmode={darkmode} setDarkmode={setDarkmode} />
-          <a href="#" className={styles.facebookIcon}>
+          <a
+            href="https://www.facebook.com/saigonexpressoslo/"
+            className={styles.facebookIcon}
+          >
             <svg
               width="24"
               height="24"
@@ -155,19 +133,31 @@ const Home = () => {
             <div className={styles.titleWrapper}>
               <h1 className={styles.title}>Velkommen til Saigon Express</h1>
               <p>
-                Nå er det levering hos oss via <a href="#">Wolt</a> og{" "}
-                <a href="#">JustEat!</a>
+                Nå er det levering hos oss via{" "}
+                <a href="https://wolt.com/en/nor/oslo/restaurant/saigon-express">
+                  Wolt
+                </a>{" "}
+                og{" "}
+                <a href="https://www.just-eat.no/en/menu/saigon-express">
+                  JustEat!
+                </a>
               </p>
             </div>
             <div className={styles.buttonWrapper}>
-              <a href="#" className="btn">
+              <a
+                href="https://wolt.com/en/nor/oslo/restaurant/saigon-express"
+                className="btn"
+              >
                 Bestill Wolt
               </a>
-              <a href="#" className="btn">
+              <a
+                href="https://www.just-eat.no/en/menu/saigon-express"
+                className="btn"
+              >
                 Bestill Just-eat
               </a>
               <br />
-              <a href="#" className="btn">
+              <a href="#meny" className="btn">
                 Bestill Takeaway
               </a>
             </div>
@@ -194,7 +184,7 @@ const Home = () => {
         <div id="meny" className={styles.menu}>
           <h1>Vår takeaway meny</h1>
           <p>
-            <a href="#">Ring og bestill</a> nå eller i forveien!
+            <a href="#kontaktoss">Ring og bestill</a> nå eller i forveien!
           </p>
           <div className={styles.menuDisplay}>
             <FlipMenu />
@@ -202,10 +192,18 @@ const Home = () => {
           <div>
             <p>eller se menyen i eget vindu...</p>
             <div>
-              <a href="#" className={`btn ${styles.btn}`}>
+              <a
+                target="_blank"
+                href="/takeawaymeny.pdf"
+                className={`btn ${styles.btn}`}
+              >
                 Takeaway PDF meny
               </a>
-              <a href="#" className={`btn ${styles.btn}`}>
+              <a
+                target="_blank"
+                href="/fullmeny.pdf"
+                className={`btn ${styles.btn}`}
+              >
                 Fullstendig PDF meny
               </a>
             </div>
@@ -217,13 +215,13 @@ const Home = () => {
           <div className={styles.galleryWrapper}>
             <ImageGallery
               className={styles.galleryDisplay}
-              items={images}
+              items={sushiImages}
               lazyload={true}
               autoPlay={true}
             />
             <ImageGallery
               className={styles.galleryDisplay}
-              items={images}
+              items={warmImages}
               lazyLoad={true}
               autoPlay={true}
             />
@@ -246,7 +244,11 @@ const Home = () => {
               </svg>
 
               <h3>Besøk oss</h3>
-              <p>Maridalsveien 157, 0465 Oslo</p>
+              <p>
+                <a href="https://www.google.com/maps?ll=59.938199,10.756934%26z=16%26t=m%26hl=en-USgl=NO%26mapclient=embed%26cid=9300041376621277178">
+                  Maridalsveien 157, 0465 Oslo
+                </a>
+              </p>
             </div>
             <div className={styles.info}>
               <svg
@@ -263,8 +265,12 @@ const Home = () => {
               </svg>
 
               <h3>Kontakt oss</h3>
-              <p>tlf: 222 30 900</p>
-              <p>e-post: epost@saigonexpress.no</p>
+              <p>
+                tlf: <a href="tel:22230900">222 30 900</a>
+              </p>
+              <p>
+                <a href="mailto:post@saigonexpress.no">post@saigonexpress.no</a>
+              </p>
             </div>
             <div className={styles.info}>
               <svg
@@ -336,7 +342,7 @@ const Home = () => {
           Copyright © 2021 - Alle rettigheter forbeholdt av Saigon Express
           SAGENE.
         </p>
-        <p>Nettside designet av Joiedesign</p>
+        <p>Nettside designet av Joiedesign (Jonny Ngo Luong)</p>
         <div>
           <p>Page top</p>
           <a className={`btn ${styles.btn}`} href="#">

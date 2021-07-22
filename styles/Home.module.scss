@@ -321,7 +321,7 @@
         height: 85vh;
         width: 70vw;
         margin: 20px 0;
-
+        overflow: hidden;
         button {
           position: absolute;
           z-index: 2;
@@ -766,7 +766,7 @@
             height: 80%;
             width: 85%;
             padding-left: 15px;
-            transform: translateY(20%);
+            transform: translateY(12%);
             .titleWrapper {
               margin-bottom: 30px;
               font-weight: 700;

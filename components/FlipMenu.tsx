@@ -53,7 +53,7 @@ const FlipMenu = (props: any) => {
       >
         <Page number="1">
           <Image
-            src="https://saigonexpress.no/pages/1.jpg"
+            src="/images/pages/1.jpg"
             width={580}
             height={1000}
             alt="Saigon Express menu page 1"
@@ -61,7 +61,7 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="2">
           <Image
-            src="https://saigonexpress.no/pages/2.jpg"
+            src="/images/pages/2.jpg"
             width={580}
             height={1000}
             alt="Saigon Express menu page2"
@@ -69,7 +69,7 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="3">
           <Image
-            src="https://saigonexpress.no/pages/3.jpg"
+            src="/images/pages/3.jpg"
             width={580}
             height={1000}
             alt="Saigon Express menu page 3"
@@ -77,7 +77,7 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="4">
           <Image
-            src="https://saigonexpress.no/pages/5.jpg"
+            src="/images/pages/4.jpg"
             width={580}
             height={1000}
             alt="Saigon Express menu page 4"
@@ -85,7 +85,7 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="5">
           <Image
-            src="https://saigonexpress.no/pages/6.jpg"
+            src="/images/pages/5.jpg"
             width={580}
             height={1000}
             alt="Saigon Express menu page 5"
@@ -93,7 +93,7 @@ const FlipMenu = (props: any) => {
         </Page>
         <Page number="6">
           <Image
-            src="https://saigonexpress.no/pages/4.jpg"
+            src="/images/pages/6.jpg"
             width={580}
             height={1000}
             alt="Saigon Express menu page 6"

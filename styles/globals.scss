@@ -92,6 +92,10 @@ html.translated-ltr {
 .image-gallery-content {
   background-color: #000;
   border-radius: 10px;
+  &.fullscreen {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 .image-gallery-image {
   width: 96% !important;
