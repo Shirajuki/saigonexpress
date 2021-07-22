@@ -6,7 +6,12 @@
   justify-content: center;
   align-items: center;
   color: var(--text-dark);
-
+  .anchor {
+    display: block;
+    position: absolute;
+    top: -58px;
+    visibility: hidden;
+  }
   .header {
     display: grid;
     grid-template-columns: 140px 1fr 140px;
@@ -267,6 +272,7 @@
       }
     }
     & > div:not(.splash) {
+      position: relative;
       display: flex;
       padding: 30px 5%;
       flex-direction: column;
@@ -674,7 +680,7 @@
           font-style: italic;
         }
         & > div {
-          margin-top: 30px;
+          margin-top: 0;
           div {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
@@ -759,7 +765,7 @@
           grid-template-columns: 100%;
           font-size: 9pt;
           align-items: flex-start;
-          grid-template-rows: 80%;
+          grid-template-rows: 90%;
           .splashWrapper {
             display: flex;
             flex-direction: column;

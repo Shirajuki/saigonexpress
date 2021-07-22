@@ -190,8 +190,9 @@ const Home = () => {
           <div id="google_translate_element"></div>
           <Slideshow />
         </div>
-        <div id="omoss" className={styles.aboutus}>
+        <div className={styles.aboutus}>
           <h1>Om Saigon Express</h1>
+          <span className={styles.anchor} id="omoss"></span>
           <p>
             Hos Saigon Express finner du velkjente Sørøst-Asiatiske retter fra
             det vietnamesiske, japanske, thailandske og kinesiske kjøkkenet.
@@ -206,8 +207,9 @@ const Home = () => {
           </p>
           <p>Hjertelig velkommen til oss!</p>
         </div>
-        <div id="meny" className={styles.menu}>
+        <div className={styles.menu}>
           <h1>Vår takeaway meny</h1>
+          <span className={styles.anchor} id="meny"></span>
           <p>
             <a href="#kontaktoss">Ring og bestill</a> nå eller i forveien!
           </p>
@@ -235,8 +237,9 @@ const Home = () => {
           </div>
         </div>
         <div className={`${styles.parallaxSection} ${styles.bg1}`}></div>
-        <div id="galleri" className={styles.gallery}>
+        <div className={styles.gallery}>
           <h1>Galleri</h1>
+          <span className={styles.anchor} id="galleri"></span>
           <div className={styles.galleryWrapper}>
             <ImageGallery
               className={styles.galleryDisplay}
