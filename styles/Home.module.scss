@@ -8,7 +8,8 @@
   color: var(--text-dark);
 
   .header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 140px 1fr 140px;
     top: 0;
     justify-content: space-between;
     align-items: center;
@@ -23,6 +24,9 @@
     &.hidden {
       // transform: translateY(-60px);
       background-color: var(--transparent);
+    }
+    .whitespace {
+      position: absolute;
     }
     nav {
       display: flex;
@@ -39,11 +43,11 @@
         &.active,
         &:hover {
           color: var(--primary);
-          &::after {
+          &::before {
             width: 100%;
           }
         }
-        &::after {
+        &::before {
           content: "";
           width: 0;
           height: 2px;
@@ -62,6 +66,7 @@
       .themeSwitcherIcon {
         padding: initial;
         background-color: var(--transparent);
+        text-align: right;
         svg > path {
           &:first-of-type {
             transition: fill 0.6s, transform 1s;
@@ -499,6 +504,7 @@
   body {
     .container.priority {
       .header {
+        display: flex;
         nav {
           flex-direction: column;
           height: 100vh;
@@ -552,11 +558,11 @@
             &.active,
             &:hover {
               color: var(--primary);
-              &::after {
+              &::before {
                 width: 80%;
               }
             }
-            &::after {
+            &::before {
               content: "";
               width: 0;
               height: 100%;
