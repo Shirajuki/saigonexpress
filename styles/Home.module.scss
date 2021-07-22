@@ -334,6 +334,7 @@
           width: 40%;
           height: 60%;
           position: absolute;
+          display: none;
           z-index: 10;
         }
         button {
@@ -765,6 +766,20 @@
   }
 }
 
+@media all and (max-width: 600px) {
+  body {
+    .container.priority {
+      .main {
+        .menu {
+          .mobileWhitespace {
+            display: block;
+            height: 70%;
+          }
+        }
+      }
+    }
+  }
+}
 @media all and (max-width: 500px) {
   body {
     .container.priority {
@@ -815,6 +830,12 @@
               width: 15px;
               height: 15px;
             }
+          }
+        }
+        .menu {
+          .mobileWhitespace {
+            display: block;
+            height: 60%;
           }
         }
         .aboutus {
