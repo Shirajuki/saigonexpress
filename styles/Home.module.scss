@@ -328,6 +328,14 @@
         width: 70vw;
         margin: 20px 0;
         overflow: hidden;
+        .mobileWhitespace {
+          background-color: transparent;
+          top: 145px;
+          width: 40%;
+          height: 60%;
+          position: absolute;
+          z-index: 10;
+        }
         button {
           position: absolute;
           z-index: 2;

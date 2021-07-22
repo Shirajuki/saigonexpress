@@ -20,6 +20,7 @@ const FlipMenu = (props: any) => {
   }, []);
   return (
     <>
+      <div className={styles.mobileWhitespace}></div>
       <button className={styles.menuNextButton} onClick={nextButtonClick}>
         <svg
           width="22"
