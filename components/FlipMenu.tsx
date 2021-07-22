@@ -53,7 +53,7 @@ const FlipMenu = (props: any) => {
         maxHeight={800}
         usePortrait={true}
         showCover={true}
-        mobileScrollSupport={true}
+        mobileScrollSupport={false}
         onInit={onInit}
         ref={(component: any) => (flipMenuRef.current = component)}
       >
