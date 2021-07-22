@@ -57,6 +57,8 @@ const FlipMenu = (props: any) => {
             width={580}
             height={1000}
             alt="Saigon Express menu page 1"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
           />
         </Page>
         <Page number="2">
@@ -65,6 +67,8 @@ const FlipMenu = (props: any) => {
             width={580}
             height={1000}
             alt="Saigon Express menu page2"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
           />
         </Page>
         <Page number="3">
@@ -73,6 +77,8 @@ const FlipMenu = (props: any) => {
             width={580}
             height={1000}
             alt="Saigon Express menu page 3"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
           />
         </Page>
         <Page number="4">
@@ -81,6 +87,8 @@ const FlipMenu = (props: any) => {
             width={580}
             height={1000}
             alt="Saigon Express menu page 4"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
           />
         </Page>
         <Page number="5">
@@ -89,6 +97,8 @@ const FlipMenu = (props: any) => {
             width={580}
             height={1000}
             alt="Saigon Express menu page 5"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
           />
         </Page>
         <Page number="6">
@@ -97,6 +107,8 @@ const FlipMenu = (props: any) => {
             width={580}
             height={1000}
             alt="Saigon Express menu page 6"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8XA8AAgsBRAyiy5MAAAAASUVORK5CYII="
           />
         </Page>
       </HTMLFlipBook>
