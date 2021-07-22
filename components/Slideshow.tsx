@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const images = [
   "https://picsum.photos/id/1018/1000/600/",
@@ -12,6 +12,15 @@ const images = [
 ];
 const Slideshow = () => {
   const [selected, setSelected] = useState<number>(0);
+  const [timer, setTimer] = useState<any>(0);
+  useEffect(() => {
+    clearTimeout(timer);
+    const t = setTimeout(
+      () => setSelected((selected + 1) % images.length),
+      10000
+    );
+    setTimer(t);
+  }, [selected]); //eslint-disable-line
   return (
     <>
       <div className={styles.slideshowWrapper}>
