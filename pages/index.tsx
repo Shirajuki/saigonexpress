@@ -156,11 +156,11 @@ const Home = () => {
                 </a>{" "}
                 og{" "}
                 <a
-                  href="https://www.just-eat.no/en/menu/saigon-express"
+                  href="https://www.foodora.no/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  JustEat!
+                  Foodora!
                 </a>
               </p>
             </div>
@@ -174,12 +174,12 @@ const Home = () => {
                 Bestill Wolt
               </a>
               <a
-                href="https://www.just-eat.no/en/menu/saigon-express"
+                href="https://www.foodora.no/"
                 target="_blank"
                 rel="noreferrer"
                 className="btn"
               >
-                Bestill Just-eat
+                Bestill Foodora
               </a>
               <br />
               <a href="#meny" className="btn">

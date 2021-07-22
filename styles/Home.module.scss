@@ -758,7 +758,8 @@
         .splash {
           grid-template-columns: 100%;
           font-size: 9pt;
-          align-items: flex-end;
+          align-items: flex-start;
+          grid-template-rows: 80%;
           .splashWrapper {
             display: flex;
             flex-direction: column;
