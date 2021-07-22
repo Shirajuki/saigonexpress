@@ -8,12 +8,6 @@ import Slideshow from "../components/Slideshow";
 import React, { useEffect, useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
-// Parallax section //
-// Splash image slideshow/carousell //
-// Navigation show on scroll //
-// Mobile view //
-// Dark mode
-
 const images = [
   {
     original: "https://picsum.photos/id/1018/1000/600/",
@@ -43,8 +37,9 @@ const images = [
 const Home = () => {
   const [hideOnScroll, setHideOnScroll] = useState(true);
   const [hideMobileNav, setHideMobileNav] = useState(true);
-  const [darkmode, setDarkmode] = useState(false);
+  const [darkmode, setDarkmode] = useState<boolean>(false);
 
+  // Scrollposition hook
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const isShow = currPos.y < -90;
@@ -53,6 +48,8 @@ const Home = () => {
     },
     [hideOnScroll]
   );
+
+  // Google translate onmount
   useEffect(() => {
     const googleTranslateElementInit = () => {
       if (!(window as any).google) {

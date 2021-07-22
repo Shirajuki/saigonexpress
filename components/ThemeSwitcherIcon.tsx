@@ -1,13 +1,27 @@
 import styles from "../styles/Home.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface IProps {
   darkmode: boolean;
   setDarkmode: (bool: boolean) => void;
 }
 const ThemeSwitcherIcon = ({ darkmode, setDarkmode }: IProps) => {
+  // Darkmode onmount
   useEffect(() => {
-    console.log("darkmode:", darkmode);
+    const theme = localStorage.getItem("sgexpress-darkmode");
+    if (theme === "true") setDarkmode(true);
+    else if (theme === "false") setDarkmode(false);
+    else if (window.matchMedia("(prefers-color-scheme)").media !== "not all") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        localStorage.setItem("sgexpress-darkmode", String(false));
+        setDarkmode(true);
+      } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+        localStorage.setItem("sgexpress-darkmode", String(true));
+      }
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("sgexpress-darkmode", String(darkmode));
   }, [darkmode]);
   return (
     <button
