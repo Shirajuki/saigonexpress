@@ -84,7 +84,7 @@ const Home = () => {
           name="keywords"
           content="Saigon Express, Oslo, restauranter, vietnamesisk mat, mat, spise middag, sushi, sushi restaurant, takeaway"
         ></meta>
-        <link rel="icon" href="/images/logo.jpg" />
+        <link rel="icon" href="/logo.jpg" />
       </Head>
 
       <header
