@@ -19,9 +19,10 @@ const ThemeSwitcherIcon = ({ darkmode, setDarkmode }: IProps) => {
         localStorage.setItem("sgexpress-darkmode", String(true));
       }
     }
-  }, []);
+  }, [setDarkmode]);
   useEffect(() => {
-    localStorage.setItem("sgexpress-darkmode", String(darkmode));
+    const theme = localStorage.getItem("sgexpress-darkmode");
+    if (theme) localStorage.setItem("sgexpress-darkmode", String(darkmode));
   }, [darkmode]);
   return (
     <button
