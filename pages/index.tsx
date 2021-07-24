@@ -8,6 +8,8 @@ import Slideshow from "../components/Slideshow";
 import React, { useEffect, useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { sushiImages, warmImages } from "../utils/imagePaths";
+import foodora from "../public/images/foodora.png";
+import wolt from "../public/images/wolt.png";
 
 const Home = () => {
   const [hideOnScroll, setHideOnScroll] = useState(true);
@@ -165,25 +167,33 @@ const Home = () => {
               </p>
             </div>
             <div className={styles.buttonWrapper}>
+              <a href="#meny" className={`btn ${styles.secondaryBtn}`}>
+                Bestill Takeaway
+              </a>
+              <br />
               <a
                 href="https://wolt.com/en/nor/oslo/restaurant/saigon-express"
                 target="_blank"
                 rel="noreferrer"
-                className="btn"
               >
-                Bestill Wolt
+                <Image
+                  src={wolt}
+                  width={50}
+                  height={50}
+                  alt="wolt app icon"
+                ></Image>
               </a>
               <a
                 href="https://www.foodora.no/"
                 target="_blank"
                 rel="noreferrer"
-                className="btn"
               >
-                Bestill Foodora
-              </a>
-              <br />
-              <a href="#meny" className="btn">
-                Bestill Takeaway
+                <Image
+                  src={foodora}
+                  width={50}
+                  height={50}
+                  alt="foodora app icon"
+                ></Image>
               </a>
             </div>
           </div>
