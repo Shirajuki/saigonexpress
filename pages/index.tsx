@@ -18,7 +18,7 @@ const Home = () => {
 
   // Scrollposition hook
   useScrollPosition(
-    ({ prevPos, currPos }) => {
+    ({ prevPos: _, currPos }) => {
       const isShow = currPos.y < -90;
       if (isShow) setHideOnScroll(false);
       else setHideOnScroll(true);
@@ -55,8 +55,12 @@ const Home = () => {
             const childNode = [].slice
               .call(el?.childNodes || [], 0)
               .find((n: any) => n?.nodeType === Node.TEXT_NODE);
-            if (childNode) el?.removeChild(childNode);
-          }, 3210);
+            if (childNode) {
+              el?.removeChild(childNode);
+            } else {
+              setTimeout(() => initTranslator(), 1000);
+            }
+          }, 5000);
         } else {
           setTimeout(() => initTranslator(), 1000);
         }
@@ -158,7 +162,7 @@ const Home = () => {
                 </a>{" "}
                 og{" "}
                 <a
-                  href="https://www.foodora.no/"
+                  href="https://www.foodora.no/en/restaurant/s32g/saigon-express"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -184,7 +188,7 @@ const Home = () => {
                 ></Image>
               </a>
               <a
-                href="https://www.foodora.no/"
+                href="https://www.foodora.no/en/restaurant/s32g/saigon-express"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -378,7 +382,7 @@ const Home = () => {
       <footer className={styles.footer}>
         <p>Copyright © 2021</p>
         <p>Alle rettigheter forbeholdt av Saigon Express SAGENE.</p>
-        <p>Nettside designet av Joiedesign</p>
+        <p>Nettside designet av Jonny Ngo Luong</p>
         <div>
           <p>Page top</p>
           <a className={`btn ${styles.btn}`} href="#">
