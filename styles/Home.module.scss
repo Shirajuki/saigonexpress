@@ -300,6 +300,7 @@
       text-align: center;
       p {
         margin-top: 12px;
+        max-width: 900px;
         &:first-of-type {
           margin-top: 0;
         }
@@ -452,6 +453,9 @@
         height: 150px;
         width: 80%;
         max-width: 750px;
+        a {
+          text-decoration: underline;
+        }
         .info {
           display: grid;
           grid-template-rows: 30% 25% 1fr 1fr 1fr;
