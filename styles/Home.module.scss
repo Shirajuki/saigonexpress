@@ -384,10 +384,10 @@
       background-repeat: no-repeat;
       background-size: cover;
       &.bg1 {
-        background-image: url(https://saigonexpress.no/images/1.jpg);
+        background-image: url("/images/1.jpg");
       }
       &.bg2 {
-        background-image: url(https://saigonexpress.no/images/2.jpg);
+        background-image: url("/images/2.jpg");
       }
       &::after {
         content: "";
