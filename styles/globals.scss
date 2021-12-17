@@ -107,3 +107,17 @@ html.translated-ltr {
 .image-gallery-right-nav .image-gallery-svg {
   height: 70px !important;
 }
+#aapningstider {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-light);
+  font-size: 11pt;
+  color: var(--text-dark);
+  border-bottom: 50px solid var(--bg);
+  div {
+    max-width: 900px;
+  }
+  figcaption {
+    text-align: center;
+  }
+}

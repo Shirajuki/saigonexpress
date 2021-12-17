@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
@@ -5,7 +6,6 @@ import ThemeSwitcherIcon from "../components/ThemeSwitcherIcon";
 import FlipMenu from "../components/FlipMenu";
 import ImageGallery from "react-image-gallery";
 import Slideshow from "../components/Slideshow";
-import React, { useEffect, useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { sushiImages, warmImages } from "../utils/imagePaths";
 import foodora from "../public/images/foodora.png";
@@ -25,7 +25,6 @@ const Home = () => {
     },
     [hideOnScroll]
   );
-
   // Google translate onmount
   useEffect(() => {
     const googleTranslateElementInit = () => {
@@ -37,7 +36,7 @@ const Home = () => {
       }
       const initTranslator = () => {
         const generateSelect = () => {
-          if ((window as any).google)
+          if ((window as any).google.translate.TranslateElement)
             new (window as any).google.translate.TranslateElement(
               {
                 pageLanguage: "no",
@@ -68,6 +67,34 @@ const Home = () => {
       setTimeout(() => initTranslator(), 1500);
     };
     googleTranslateElementInit();
+    setTimeout(() => {
+      if (!sessionStorage["saigonexpress-hideInfoOnSession"]) {
+        const alert_melding = `
+        Kjære gjester, 
+        Vi har nye åpningstider i julen!
+        
+        23.12			Kl. 13-19
+        24.12			Stengt
+        25.12			Stengt
+        26.12		 	Stengt
+        27.12			Kl. 14-21
+        28.12			Kl. 14-21
+        29.12			Kl. 14-21
+        30.12			Kl. 14-20
+        31.12			Stengt
+        01.01			Kl. 14-21
+        
+        Fra og med 02.01 vil åpningstidene være normale igjen:
+        "Mandag- søndag Kl. 13-21"
+        God jul!
+        
+        Mvh.
+        Saigon Express
+        `;
+        sessionStorage["saigonexpress-hideInfoOnSession"] = true;
+        window.alert(alert_melding);
+      }
+    }, 1000);
   }, []);
 
   return (
@@ -203,6 +230,23 @@ const Home = () => {
           </div>
           <div id="google_translate_element"></div>
           <Slideshow />
+        </div>
+        <div id="aapningstider">
+          <div>
+            <figure>
+              <Image
+                src="/images/aapningstid.jpg"
+                alt="åpningstider i julen"
+                width={954}
+                height={466}
+                layout="intrinsic"
+              ></Image>
+              <figcaption>
+                Fra og med 02.01 vil åpningstidene være normale igjen:
+                &quot;Mandag- søndag Kl. 13-21&quot;
+              </figcaption>
+            </figure>
+          </div>
         </div>
         <div className={styles.aboutus}>
           <h1>Om Saigon Express</h1>
