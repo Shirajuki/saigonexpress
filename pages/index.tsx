@@ -67,30 +67,30 @@ const Home = () => {
       setTimeout(() => initTranslator(), 1500);
     };
     googleTranslateElementInit();
+    const alert_melding = `
+Kjære gjester, 
+Vi har nye åpningstider i julen!
+
+23.12         Kl. 13-19
+24.12         Stengt
+25.12         Stengt
+26.12         Stengt
+27.12         Kl. 14-21
+28.12         Kl. 14-21
+29.12         Kl. 14-21
+30.12         Kl. 14-20
+31.12         Stengt
+01.01         Kl. 14-21
+
+Fra og med 02.01 vil åpningstidene være normale igjen:
+"Mandag- søndag Kl. 13-21"
+God jul!
+
+Mvh.
+Saigon Express
+    `;
     setTimeout(() => {
       if (!sessionStorage["saigonexpress-hideInfoOnSession"]) {
-        const alert_melding = `
-        Kjære gjester, 
-        Vi har nye åpningstider i julen!
-        
-        23.12			Kl. 13-19
-        24.12			Stengt
-        25.12			Stengt
-        26.12		 	Stengt
-        27.12			Kl. 14-21
-        28.12			Kl. 14-21
-        29.12			Kl. 14-21
-        30.12			Kl. 14-20
-        31.12			Stengt
-        01.01			Kl. 14-21
-        
-        Fra og med 02.01 vil åpningstidene være normale igjen:
-        "Mandag- søndag Kl. 13-21"
-        God jul!
-        
-        Mvh.
-        Saigon Express
-        `;
         sessionStorage["saigonexpress-hideInfoOnSession"] = true;
         window.alert(alert_melding);
       }
@@ -235,7 +235,7 @@ const Home = () => {
           <div>
             <figure>
               <Image
-                src="/images/aapningstid.jpg"
+                src="/images/aapningstid2021.png"
                 alt="åpningstider i julen"
                 width={954}
                 height={466}
