@@ -89,11 +89,10 @@ God jul!
 Mvh.
 Saigon Express
     `;
+    // Removes sessionStorage on opening hours alert
     setTimeout(() => {
-      if (!sessionStorage["saigonexpress-hideInfoOnSession"]) {
-        sessionStorage["saigonexpress-hideInfoOnSession"] = true;
-        window.alert(alert_melding);
-      }
+      if (sessionStorage["saigonexpress-hideInfoOnSession"])
+        sessionStorage.removeItem("saigonexpress-hideInfoOnSession");
     }, 1000);
   }, []);
 
@@ -231,23 +230,26 @@ Saigon Express
           <div id="google_translate_element"></div>
           <Slideshow />
         </div>
-        <div id="aapningstider">
-          <div>
-            <figure>
-              <Image
-                src="/images/aapningstid2021.png"
-                alt="åpningstider i julen"
-                width={954}
-                height={466}
-                layout="intrinsic"
-              ></Image>
-              <figcaption>
-                Fra og med 02.01 vil åpningstidene være normale igjen:
-                &quot;Mandag- søndag Kl. 13-21&quot;
-              </figcaption>
-            </figure>
+        {/* Åpningstider toggle */}
+        {false && (
+          <div id="aapningstider">
+            <div>
+              <figure>
+                <Image
+                  src="/images/aapningstid2021.png"
+                  alt="åpningstider i julen"
+                  width={954}
+                  height={466}
+                  layout="intrinsic"
+                ></Image>
+                <figcaption>
+                  Fra og med 02.01 vil åpningstidene være normale igjen:
+                  &quot;Mandag- søndag Kl. 13-21&quot;
+                </figcaption>
+              </figure>
+            </div>
           </div>
-        </div>
+        )}
         <div className={styles.aboutus}>
           <h1>Om Saigon Express</h1>
           <span className={styles.anchor} id="omoss"></span>
