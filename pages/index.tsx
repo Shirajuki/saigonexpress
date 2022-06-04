@@ -25,6 +25,7 @@ const Home = () => {
     },
     [hideOnScroll]
   );
+
   // Google translate onmount
   useEffect(() => {
     const googleTranslateElementInit = () => {
@@ -68,27 +69,17 @@ const Home = () => {
     };
     googleTranslateElementInit();
     const alert_melding = `
+NB! Nytt nummer!
+
 Kjære gjester, 
-Vi har nye åpningstider i julen!
 
-23.12         Kl. 13-19
-24.12         Stengt
-25.12         Stengt
-26.12         Stengt
-27.12         Kl. 14-21
-28.12         Kl. 14-21
-29.12         Kl. 14-21
-30.12         Kl. 14-20
-31.12         Stengt
-01.01         Kl. 14-21
-
-Fra og med 02.01 vil åpningstidene være normale igjen:
-"Mandag- søndag Kl. 13-21"
-God jul!
+Vennligst ring dette nummeret
+hvis du ønsker å bestille mat: 476 18 120
 
 Mvh.
 Saigon Express
     `;
+    setTimeout(() => alert(alert_melding), 1000);
     // Removes sessionStorage on opening hours alert
     setTimeout(() => {
       if (sessionStorage["saigonexpress-hideInfoOnSession"])
@@ -354,7 +345,7 @@ Saigon Express
 
               <h3>Kontakt oss</h3>
               <p>
-                tlf: <a href="tel:22230900">222 30 900</a>
+                tlf: <a href="tel:47618120">476 18 120</a>
               </p>
               <p>
                 <a href="mailto:post@saigonexpress.no">post@saigonexpress.no</a>
