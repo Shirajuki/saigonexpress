@@ -24,6 +24,7 @@
     "sweetalert2": "^11.3.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.39",
     "@types/prettier": "^2.3.2",
     "@types/react": "17.0.14",
     "@types/react-image-gallery": "^1.0.4",
