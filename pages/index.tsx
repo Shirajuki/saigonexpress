@@ -69,12 +69,10 @@ const Home = () => {
     };
     googleTranslateElementInit();
     const alert_melding = `
-NB! Nytt nummer!
-
 Kjære gjester, 
 
-Vennligst ring dette nummeret
-hvis du ønsker å bestille mat: 476 18 120
+Vi tar sommerferie fra 11.07 t.o.m. 16.07.
+Ha en fin sommerferie alle sammen!
 
 Mvh.
 Saigon Express
