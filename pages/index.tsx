@@ -68,6 +68,7 @@ const Home = () => {
       setTimeout(() => initTranslator(), 1500);
     };
     googleTranslateElementInit();
+    /*
     const alert_melding = `
 Kjære gjester, 
 
@@ -83,6 +84,7 @@ Saigon Express
       if (sessionStorage["saigonexpress-hideInfoOnSession"])
         sessionStorage.removeItem("saigonexpress-hideInfoOnSession");
     }, 1000);
+    */
   }, []);
 
   return (
