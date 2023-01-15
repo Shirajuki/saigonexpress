@@ -188,8 +188,9 @@ Saigon Express
               </p>
             </div>
             <div className={styles.buttonWrapper}>
-              <a href="#meny" className={`btn ${styles.secondaryBtn}`}>
-                Bestill Takeaway
+              <a href="tel:47618120" className={`btn ${styles.secondaryBtn}`}>
+                Bestill Takeaway:{" "}
+                <span className="takeawayspan">476 18 120</span>
               </a>
               <br />
               <a

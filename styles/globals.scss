@@ -57,6 +57,7 @@ a {
 }
 button,
 a.btn {
+  border-radius: 0.5rem;
   padding: 15px 25px;
   border: none;
   background-color: #9cbd32;
@@ -120,4 +121,7 @@ html.translated-ltr {
   figcaption {
     text-align: center;
   }
+}
+.takeawayspan {
+  border-bottom: 1px solid white;
 }
