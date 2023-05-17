@@ -68,12 +68,12 @@ const Home = () => {
       setTimeout(() => initTranslator(), 1500);
     };
     googleTranslateElementInit();
-    /*
+
     const alert_melding = `
 Kjære gjester, 
 
-Vi tar sommerferie fra 11.07 t.o.m. 16.07.
-Ha en fin sommerferie alle sammen!
+Vi tar oss fri og feirer 17. mai.
+Ønsker alle en fin feiring. Gratulerer med dagen!
 
 Mvh.
 Saigon Express
@@ -84,7 +84,6 @@ Saigon Express
       if (sessionStorage["saigonexpress-hideInfoOnSession"])
         sessionStorage.removeItem("saigonexpress-hideInfoOnSession");
     }, 1000);
-    */
   }, []);
 
   return (
