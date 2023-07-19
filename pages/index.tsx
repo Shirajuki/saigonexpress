@@ -78,7 +78,7 @@ Vi tar oss fri og feirer 17. mai.
 Mvh.
 Saigon Express
     `;
-    setTimeout(() => alert(alert_melding), 1000);
+    // setTimeout(() => alert(alert_melding), 1000);
     // Removes sessionStorage on opening hours alert
     setTimeout(() => {
       if (sessionStorage["saigonexpress-hideInfoOnSession"])
